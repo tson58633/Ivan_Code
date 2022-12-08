@@ -1,0 +1,1433 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset136 PingFangHK-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh16380\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #define RIGHT_ARM 2\
+#define LEFT_ARM 3\
+#define CHEST 4\
+#define BACK_BODY 5\
+#define RIGHT_LEG 6\
+#define LEFT_LEG 7\
+#define RIGHT_ARM_TOUCH 8\
+#define LEFT_ARM_TOUCH 9\
+void setup()\
+\{\
+  pinMode(LEFT_ARM, OUTPUT);\
+  pinMode(RIGHT_ARM, OUTPUT);\
+  pinMode(CHEST, OUTPUT);\
+  pinMode(BACK_BODY, OUTPUT);\
+  pinMode(RIGHT_LEG, OUTPUT);\
+  pinMode(LEFT_LEG, OUTPUT); \
+  pinMode(RIGHT_ARM_TOUCH, OUTPUT);\
+  pinMode(LEFT_ARM_TOUCH, OUTPUT);\
+\
+  Serial.begin(9600);\
+\}\
+void touch_arm_3()\{\
+  digitalWrite(RIGHT_ARM_TOUCH, HIGH);\
+  digitalWrite(LEFT_ARM_TOUCH, HIGH);\
+  delay(1000);\
+  digitalWrite(RIGHT_ARM_TOUCH, LOW);\
+  digitalWrite(LEFT_ARM_TOUCH, LOW);\
+  delay(500);\
+  digitalWrite(RIGHT_ARM_TOUCH, HIGH);\
+  digitalWrite(LEFT_ARM_TOUCH, HIGH);\
+  delay(1000);\
+  digitalWrite(RIGHT_ARM_TOUCH, LOW);\
+  digitalWrite(LEFT_ARM_TOUCH, LOW);\
+  delay(500);\
+  digitalWrite(RIGHT_ARM_TOUCH, HIGH);\
+  digitalWrite(LEFT_ARM_TOUCH, HIGH);\
+  delay(1000);\
+  digitalWrite(RIGHT_ARM_TOUCH, LOW);\
+  digitalWrite(LEFT_ARM_TOUCH, LOW);\
+  delay(500);\
+\}\
+void crowd_noise()\
+\{\
+digitalWrite(RIGHT_ARM, LOW); //
+\f1 \'c2\'f9\'b8\'7d
+\f0 \
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW); //
+\f1 \'c2\'f9\'b8\'7d
+\f0 +
+\f1 \'ab\'e1\'ad\'49
+\f0 \
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW); //
+\f1 \'c2\'f9\'b8\'7d
+\f0 +
+\f1 \'ab\'e1\'ad\'49
+\f0 +
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);  //
+\f1 \'c2\'f9\'b8\'7d
+\f0 +
+\f1 \'ab\'e1\'ad\'49
+\f0 +
+\f1 \'af\'dd\'a4\'66
+\f0 +
+\f1 \'c2\'f9\'a4\'e2
+\f0 \
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+delay(5000);\
+digitalWrite(RIGHT_ARM, LOW);  //
+\f1 \'c2\'f9\'b8\'7d
+\f0 +
+\f1 \'ab\'e1\'ad\'49
+\f0 +
+\f1 \'af\'dd\'a4\'66
+\f0 +
+\f1 \'c2\'f9\'a4\'e2
+\f0 \
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+\}\
+\
+void music_2()\
+\{\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  1\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);     //
+\f1 \'a5\'aa\'a4\'e2
+\f0 \
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);     //
+\f1 \'a5\'aa\'b8\'7d
+\f0 \
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4   
+\f1 \'a5\'6b\'a4\'e2
+\f0 \
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH);     //
+\f1 \'a5\'6b\'b8\'7d
+\f0 \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  2\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON 
+\f1 \'a5\'fe\'a8\'ad
+\f0 \
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+  \
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  3\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+  \
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  4\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+  \
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  5\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+  \
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  6\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+  \
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  7\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+delay(500);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+  \
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+//
+\f1 \'ab\'65\'ab\'b5
+\f0  8\
+digitalWrite(RIGHT_ARM, HIGH);     //Full ON\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+ if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+  \
+digitalWrite(RIGHT_ARM, LOW);     //ON 1\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, HIGH);        //
+\f1 \'af\'dd\'a4\'66
+\f0 \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW);    \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 2\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);    //
+\f1 \'ad\'49
+\f0 \
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //ON 3\
+digitalWrite(LEFT_ARM, HIGH);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, LOW);     //STOP\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+\
+digitalWrite(RIGHT_ARM, HIGH);     //ON 4\
+digitalWrite(LEFT_ARM, LOW);\
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(200);\
+//
+\f1 \'ab\'65\'ab\'b5\'a7\'b9\'b5\'b2
+\f0 \
+//
+\f1 \'ad\'b5\'bc\'d6\'b6\'7d\'a9\'6c
+\f0 \
+  for (int i = 1; i>0; i++) \{\
+digitalWrite(RIGHT_ARM, HIGH);     //music set 1\
+digitalWrite(LEFT_ARM, LOW);       //
+\f1 \'a5\'6b\'a4\'e2
+\f0 +
+\f1 \'af\'dd\'a4\'66
+\f0 +
+\f1 \'a5\'aa\'b8\'7d
+\f0 \
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(300);\
+//---------------------------------\
+digitalWrite(RIGHT_ARM, LOW);     //music set 2\
+digitalWrite(LEFT_ARM, HIGH);     //
+\f1 \'a5\'aa\'a4\'e2
+\f0 +
+\f1 \'ad\'49\'b3\'a1
+\f0 +
+\f1 \'a5\'6b\'b8\'7d
+\f0 \
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(300);\
+//---------------------------------\
+digitalWrite(RIGHT_ARM, HIGH);     //music set 3\
+digitalWrite(LEFT_ARM, HIGH);      //
+\f1 \'a5\'6b\'a4\'e2
+\f0 +
+\f1 \'a5\'6b\'b8\'7d
+\f0 +
+\f1 \'a5\'aa\'a4\'e2
+\f0 +
+\f1 \'a5\'aa\'b8\'7d
+\f0 \
+digitalWrite(CHEST, LOW); \
+digitalWrite(BACK_BODY, LOW);\
+digitalWrite(RIGHT_LEG, HIGH); \
+digitalWrite(LEFT_LEG, HIGH);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(300);\
+//---------------------------------\
+digitalWrite(RIGHT_ARM, LOW);     //music set 4\
+digitalWrite(LEFT_ARM, LOW);      //
+\f1 \'af\'dd\'a4\'66
+\f0 +
+\f1 \'ad\'49\'b3\'a1
+\f0 \
+digitalWrite(CHEST, HIGH); \
+digitalWrite(BACK_BODY, HIGH);\
+digitalWrite(RIGHT_LEG, LOW); \
+digitalWrite(LEFT_LEG, LOW);\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+delay(300);\
+//---------------------------------\
+  \}\
+  \}\
+  \
+void loop()\
+\{\
+  //crowd_noise();\
+  //music_2();\
+  //touch_arm_3();\
+  //crowd_noise();\
+  if(Serial.available())\{\
+    char val = Serial.read();\
+  \
+  if(val == '3')\{\
+    touch_arm_3();\
+  \}\
+\
+ \}\
+  if(Serial.available())\{\
+    char val = Serial.read(); \
+  if(val == '2')\{\
+    crowd_noise();\
+    music_2();\
+  \}\
+ \}\
+\}}
