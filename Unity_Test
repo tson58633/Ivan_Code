@@ -1,0 +1,14 @@
+public class PlayerController : MonoBehaviour {
+    public float walkSpeed = 5.0f;   // The speed at which the player moves
+    public float rotateSpeed = 3.0f; // The speed at which the player rotates
+
+    void Update () {
+        // Move the player forward or backward based on input
+        float moveForward = Input.GetAxis("Vertical") * walkSpeed * Time.deltaTime;
+        transform.Translate(0, 0, moveForward);
+
+        // Rotate the player left or right based on input
+        float rotateLeftRight = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
+        transform.Rotate(0, rotateLeftRight, 0);
+    }
+}
